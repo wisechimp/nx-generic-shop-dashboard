@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+const AdminLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return <>{children}</>;
 };
 
-export default RootLayout;
+export default AdminLayout;
