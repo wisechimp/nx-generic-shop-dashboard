@@ -3,7 +3,7 @@ import createSupabaseServerClient from "@/supabase/server";
 import { redirect } from "next/navigation";
 import { ReactNode } from "react";
 
-const AdminLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
+const AuthLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
   const supabase = await createSupabaseServerClient();
   const {
     data: { user },
@@ -22,11 +22,11 @@ const AdminLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
     }
 
     if (data.type === ADMIN) {
-      return redirect("/");
+      return redirect("/admin");
     }
   }
 
   return <>{children}</>;
 };
 
-export default AdminLayout;
+export default AuthLayout;
