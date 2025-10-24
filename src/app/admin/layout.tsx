@@ -1,3 +1,6 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import RenderMounted from "@/components/render-mounted";
 import { ADMIN } from "@/constants/constants";
 import createSupabaseServerClient from "@/supabase/server";
 import { redirect } from "next/navigation";
@@ -26,7 +29,13 @@ const AdminLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
     }
   }
 
-  return <>{children}</>;
+  return (
+    <RenderMounted>
+      <Header />
+      <main className="min-h-[calc(100svh-128px)] py3">{children}</main>
+      <Footer />
+    </RenderMounted>
+  );
 };
 
 export default AdminLayout;
